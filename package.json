@@ -1,0 +1,32 @@
+{
+    "name": "react-button-feedback",
+    "version": "0.1.0",
+    "description": "Button components with a Ladda-inspired feedback.",
+    "author": "Dimitri Racordon",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/kyouko-taiga/react-button-feedback.git"
+    },
+    "devDependencies": {
+        "babelify": "~6.1.3",
+        "browserify": "~10.2.3",
+        "uglify-js": "~2.4.23",
+        "watchify": "~3.2.3"
+    },
+    "dependencies": {
+        "browsernizr": "~1.0.2",
+        "react": "~0.13.3"
+    },
+    "browserify": {
+        "transform": [
+            "babelify"
+        ]
+    },
+    "scripts": {
+        "clean": "rm -rf static/js/main*.js",
+        "build": "browserify src/main.jsx --extension=.jsx | uglifyjs -cm > static/js/main.min.js",
+        "build-debug": "browserify src/main.jsx --extension=.jsx -o static/js/main.js -v -d",
+        "watch": "watchify src/main.jsx --extension=.jsx -o static/js/main.js -v -d"
+    }
+}
