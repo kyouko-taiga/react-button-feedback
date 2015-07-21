@@ -24,7 +24,7 @@ By default, ``start`` is called whenever the user clicks on the button.
 
 Example:
 
-```
+```js
 import LoadingButton from './lib/LoadingButton';
 
 var App = React.createClass({
